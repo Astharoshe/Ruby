@@ -17,4 +17,26 @@ class BoardController < ApplicationController
 		
 		redirect_to '/read'
 	end
+	
+	def modify
+		@post = Boardpost.find(params[:post_id])
+	end
+	
+	def update
+		post = Boardpost.find(params[:post_id])
+		post.title = params[:title]
+		post.content = params[:content]
+		post.save
+		
+		redirect_to '/read'
+	end
+		
+	def delete
+		Boardpost.destroy(params[:post_id])
+		# rails 5 버전 이하에서만 동작
+		# redirect_to :back
+		
+		# 5버전 이후 변경
+		redirect_back fallback_location: '/read'
+	end
 end
