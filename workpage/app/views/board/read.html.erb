@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<!-- Read page -->
+<a href="/write">글 쓰러가기</a>
+<br>
+<% @posts.each do |post| %>
+제목: <%= post.title %>
+<br>
+내용: <%= post.content %>
+<hr>
+<% end %>
