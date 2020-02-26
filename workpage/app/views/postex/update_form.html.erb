@@ -1,0 +1,28 @@
+<h1>Postex#update_form</h1>
+<p>Find me in app/views/postex/update_form.html.erb</p>
+
+<form action="/postex/update/<%= @post.id %>" method="post">
+	<div class="form-group">
+		<label for="title">제목</label>	
+		<input type="text" name="title" class="form-control" id="title" placeholder="제목" value="<%= @post.title %>"/>
+	</div>
+	<div class="form-group">
+		<label for="author">작성자</label>	
+		<input type="text" name="author" class="form-control" id="author" placeholder="작성자" value="<%= @post.author %>"/>
+	</div>
+	<textarea name="content" class="form-control"><%= @post.content %></textarea>
+	<input type="submit" value="수정" class="submit"/>
+</form>
+
+
+<style>
+	form
+	{
+		max-width:800px;
+		margin:0 auto;
+	}
+	.submit
+	{
+		margin:30px;
+	}
+</style>

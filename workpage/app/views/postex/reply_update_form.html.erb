@@ -1,0 +1,17 @@
+<form action="/reply/update/<%= @post.id %>" method="post">
+	<textarea name="content" class="form-control"><%= @post.content %></textarea>
+	<input type="submit" value="수정" class="submit"/>
+</form>
+
+
+<style>
+	form
+	{
+		max-width:800px;
+		margin:0 auto;
+	}
+	.submit
+	{
+		margin:30px;
+	}
+</style>

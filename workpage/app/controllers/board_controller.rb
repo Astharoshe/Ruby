@@ -36,7 +36,7 @@ class BoardController < ApplicationController
 		# rails 5 버전 이하에서만 동작
 		# redirect_to :back
 		
-		# 5버전 이후 변경
+		# 5.1버전 이후 변경
 		redirect_back fallback_location: '/read'
 	end
 end

@@ -1,0 +1,56 @@
+<h1>Postex#index</h1>
+<p>Find me in app/views/postex/index.html.erb</p>
+
+
+<div class="container">
+	<% @Posts.each do |post| %>
+	<div class="post">
+		<h1>
+			<%= post.title %>
+		</h1>
+		<div class="edit">
+			<a href ="/postex/update_form/<%= post.id %>">수정</a>
+			<a href ="/postex/delete/<%= post.id %>">삭제</a>
+		</div>
+		<div style="text-align:right">
+			<%= post.author %>
+		</div>
+		<hr>
+			<%= post.content %>
+		<hr>
+	    <% post.replies.each do |reply| %>
+			<div class ="reply">
+				<%= reply.content %>	
+				<div class="edit_reply">
+					<a href ="/reply/update_form/<%= reply.id %>">수정</a>
+					<a href ="/reply/delete/<%= reply.id %>">삭제</a>
+				</div>
+			</div>
+		<% end %>	
+		<form method="post" action="/reply/create/<%= post.id %>" >
+			<textarea name="content" class="form-control"></textarea>
+			<input type="submit" value="등록" class="btn btn-default"/>
+		</form>
+	</div>
+	<% end %>
+	<a href="/postex/create_form">글 쓰기</a>
+</div>
+
+<style>
+	.post, .reply
+	{ 
+		border: 1px solid; 
+		margin: 30px auto; 
+		max-width: 1000px; 
+		boarder-radius: 5px; 
+		padding: 40px; 
+	}
+	.edit
+	{
+		float: left;
+	}
+	 .edit_reply
+	{
+		float: right;
+	}
+</style>

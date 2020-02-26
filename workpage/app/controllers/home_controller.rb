@@ -4,4 +4,7 @@ class HomeController < ApplicationController
 	def index
 		
 	end
+	
+	# rake db:migrate 
+	# DB 생성
 end
