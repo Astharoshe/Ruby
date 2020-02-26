@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
-	## index Action
+	# index Action
+	# index page 처리
 	def index
 		
 	end

@@ -6,4 +6,10 @@ Rails.application.routes.draw do
   get '/add' => 'calculator#add'
   post '/result' => 'calculator#result'
   get '/result/:first/:second' => 'calculator#result'
+	
+	
+  get '/board' => 'board#board'
+  get '/read' => 'board#read'
+  get '/write' => 'board#write'
+  post '/create' => 'board#create'
 end
