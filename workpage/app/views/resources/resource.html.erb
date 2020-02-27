@@ -1,0 +1,31 @@
+resources 명령어
+RESTfull API설정
+
+resources :posts([이름])
+- app/config/routes.rb에 선언
+- 아래의 기능 포함
+GET  		/posts 				index
+POST 		/posts 				create
+GET 		/posts 				new
+GET 		/posts/:id/edit 	edit
+GET 		/posts/:id 			show
+PUT/PATCH /posts/:id 			update
+DELETE 	/posts/:id 			destroy
+
+
+- 옵션 
+only: [:index, :show]([액션])   사용
+except: destroy 			 	제외
+
+- prefix를 앞에 추가
+scpoe '[명칭]', as: '[명칭]' do
+	resources :[명칭], :[명칭]
+end
+
+- 이중 resources 구조
+resources :[명칭] do
+	resources : [명칭], as [명칭]:
+end
+
+- 파라미터 :id에서 바꿀때
+resources :[명칭] , param:identifier

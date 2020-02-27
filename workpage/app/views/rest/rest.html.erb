@@ -1,0 +1,50 @@
+<!--
+REST
+- REpresentatinal
+- State
+- Transfer
+- 네트워크 아키텍쳐 원리 모음
+- URL 주소만 보고 수행하려는 동작을 알수 있게 만드는것
+
+제한 조건
+- 클라이언트 / 서버 구조
+- 무상태(Stateless)
+- 캐시 처리 가능(Cacheable)
+- 계층화(Layered System)
+- Code on demand(Optional)
+- 인터페이스 일관성
+
+URL의 의미중 명사가 리소스, 동사를 메소드로 만든다
+GET/posts           글 목록(posts)을 봅니다(GET)
+					단순히 데이터를 가져와서 보여줄때
+					수행전후가 같다
+					반본수행한 결과가 같다
+					리소스의 수가 같다.
+
+POST/posts          글(posts)을 생성합니다.(POST)
+					데이터를 생성할때
+					수행전후가 다르다
+					반본수행한 결과가 다르다
+					리소스의 수가 많아진다.
+
+PUT/posts/:id       글(posts)을 수정합니다.(PUT)
+					데이터 수정
+					수행전후가 다르다
+					반본수행한 같다
+					리소스의 수가 같다
+
+DELETE/posts/:id    글(posts)을 삭제합니다.(DELTE)
+					데이터 삭제
+					수행전후가 다르다
+					반본수행한 결과가 다르다
+					리소스의 수가 적어진다
+
+주의할점
+- ID와 리소스 이외의 정보를 URI에 담으면 안된다.
+예) PUT/dogs/1?isSick=true O
+    PUT/dogs/1/isSick      X
+- 무엇(명사)을 생성하는지 생각해보아야한다
+예) POST/session     O
+    POST/login       X
+    POST/user/login  X
+--> 
