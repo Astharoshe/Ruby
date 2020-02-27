@@ -1,0 +1,25 @@
+prefix
+- route에 명칭 붙이기
+- Path Helper(URL)에 이름 붙이이는것
+- URL 교체가 간단해진다.
+- 예)
+	URL 			prefix 				path
+/posts/edit/1 -> edit_post(:id) -> edit_post_path(:id)
+
+설정방법
+예)
+get '/new', to: 'article#new', as 'my_new_article'
+to == =>
+예
+resourece :article
+
+사용법
+<%= link_to 'Edit', edit_post_path(post) %>
+					 == /post/:id/edit
+
+redirect_to :new_post_path
+			 == /post/new
+
+
+path
+- route명칭으로 url 호출
