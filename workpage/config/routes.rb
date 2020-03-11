@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get '/'   => 'posts#index'
+	
   # /로 접속하면 home controller에 index Action 실행
   # home#폴더 index 페이지
   get '/index' => 'home#index'

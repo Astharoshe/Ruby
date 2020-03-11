@@ -2,6 +2,13 @@
 
 <h1>Posts</h1>
 
+<%= current_user.email %>
+<!-- 로그아웃 버튼 
+ <a href="/users/sign_out" data-method="delete">로그아웃</a> 
+-->
+ <%= link_to '로그아웃', destroy_user_session_path, method: :delete %>
+
+
 <table>
   <thead>
     <tr>

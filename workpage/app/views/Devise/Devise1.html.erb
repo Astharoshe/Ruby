@@ -1,0 +1,47 @@
+Device 이외에 회원가입 gems
+omniauth
+doorkeeper
+authlogic
+
+
+기능
+가입,탈퇴, 로그인, 로그아웃, 정보수정, 메일인증, 계정정지, IP기록, 암호 Hash화 + Salt 설정가능
+
+support routes
+new_user_session 			GET    		/users/sign_in(.:format) 		  {controller:"devise/sessions", action:"new"}
+user_session 				POST  		/users/sign_in(.:format)          {controller:"devise/sessions", action:"create"}
+destroy_user_session 		DELETE 		/users/sign_out(.:format)         {controller:"devise/sessions", action:"destroy"}
+
+user_password 				POST   		/users/password(.:format)         {controller:"devise/passwords", action:"create"}
+new_user_password 			GET    		/users/password/new(.:format)     {controller:"devise/passwords", action:"new"}
+edit_user_password 			GET 		/users/password/edit(.:format)    {controller:"devise/passwords", action:"edit"}
+							PATCH 		/users/password(.:format) 		  {controller:"devise/passowrds", action:"update"}
+							PUT   		/users/password(.:format)         {controller:"devise/passwords", action:"update"}
+
+cancel_user_registration 	GET 		/users/cancel(.:format)     	  {controller:"devise/registrations", action:"cancel"}
+user_registration 		 	POST   	 	/users(.:format)  				  {controller:"devise/registrations", action:"create"}
+new_user_registration 		GET    		/users/sign_up(.:format)  		  {controller:"devise/registrations", action:"new"}
+edit_user_registration 		GET    		/users/edit(.:format)  			  {controller:"devise/registrations", action:"edit"}
+							PATCH 		/users(.:format) 		  		  {controller:"devise/passowrds", action:"update"}
+							PUT 		/users(.:format) 		  		  {controller:"devise/passowrds", action:"update"}
+							DELETE  	/users(.:format)         		  {controller:"devise/passwords", action:"destroy"}
+
+new_user_confirmation 		GET     	/users/confirmation/new(.:format) {controller:"devise/confirmations", action:"new"}
+user_confirmation 			GET    		/users/confirmation(.:format)     {controller:"devise/confirmations", action:"show"}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+적용
+1. gemfile 작성
+- gem devise
+
+2. gem 설치
+bundle install
+rails g devise:install
+
+
+3. 유저모델만들기
+rails generate devise [DB명]
+rake db:migrate
+
+
+
